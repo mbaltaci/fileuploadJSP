@@ -20,11 +20,17 @@ Listing Images
 <%
 String path =(String) request.getAttribute("path");
 	List<Files> files = (List<Files>) request.getAttribute("files");
-	/* for (Files f: files) {
-		out.print ("<tr><td><img src="+path+f.getFileName() + " height='200' width='200'></td></tr>");
-		out.print("<td><li>"+
-				"<ul>File ID: </ul>" 
-	}*/
+	for (Files f: files) {
+		out.print ("<tr><td><img src="+path+f.getFileName() + " height='200' width='200'></td>");
+		out.print("<td><lu>"+
+				"<li> File ID: "+f.getId()+" </li>"+
+				"<li> File Name: "+f.getFileName()+"</li>"+
+				"<li> File Label: "+f.getLabel()+" </li>"+
+				"<li> File CAption: "+f.getCaption()+" </li>"+
+				
+				"</lu></td></tr>"
+				);
+	}
 
 
 %>
